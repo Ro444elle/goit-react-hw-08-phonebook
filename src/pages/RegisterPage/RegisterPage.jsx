@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Typography, Box, TextField } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/operationsAuth';
+import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleChangeInput = event => {
     const { name, value } = event.target;
@@ -18,6 +25,8 @@ export default function RegisterPage() {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(email, password);
+    dispatch(register({ email, password }));
+    navigate('/contacts');
   };
 
   return (

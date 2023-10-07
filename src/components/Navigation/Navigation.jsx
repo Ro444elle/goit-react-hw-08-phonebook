@@ -6,14 +6,8 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink to="/contacts" exact>
-          Contacts
-        </NavLink>
-      )}
+      <NavLink to="/">Home</NavLink>
+      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
     </nav>
   );
 };

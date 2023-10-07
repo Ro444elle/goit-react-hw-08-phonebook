@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createContact, deleteContact, fetchContacts } from './operations';
+import { logOut } from './auth/operationsAuth';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -13,6 +14,17 @@ const contactsSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
+    handlePending: state => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    handleRejected: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    // logOut: state => {
+    //   state.isAuthenticated = false;
+    // },
   },
 
   extraReducers: builder => {
@@ -54,8 +66,16 @@ const contactsSlice = createSlice({
       .addCase(createContact.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
+      })
+      .addCase(logOut.fulfilled, state => {
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
       });
   },
 });
+
+export const { setFilter, handlePending, handleRejected } =
+  contactsSlice.actions;
 
 export default contactsSlice.reducer;
