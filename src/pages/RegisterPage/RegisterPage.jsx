@@ -3,6 +3,7 @@ import { Button, Typography, Box, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operationsAuth';
 import { useNavigate } from 'react-router-dom';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -75,7 +76,11 @@ export default function RegisterPage() {
         fullWidth
         onChange={handleChangeInput}
       />
-      <Button type="submit" variant="contained">
+      <Button
+        startIcon={<SentimentSatisfiedAltIcon />}
+        type="submit"
+        variant="contained"
+      >
         Register
       </Button>
     </Box>

@@ -3,6 +3,7 @@ import { Button, Typography, Box, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operationsAuth';
 import { useNavigate } from 'react-router-dom';
+import LoginIcon from '@mui/icons-material/Login';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -75,7 +76,7 @@ export default function LoginPage() {
         fullWidth
         onChange={handleChangeInput}
       />
-      <Button type="submit" variant="contained">
+      <Button startIcon={<LoginIcon />} type="submit" variant="contained">
         Login
       </Button>
     </Box>
