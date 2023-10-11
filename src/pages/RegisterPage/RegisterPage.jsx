@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operationsAuth';
 import { useNavigate } from 'react-router-dom';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import theme from '../../themes';
+import imgTel from '../../assets/images/imageTelephone.jpg';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -48,11 +50,12 @@ export default function RegisterPage() {
         gap: '20px',
       }}
     >
+      <img src={imgTel} alt="yellowPhone" />
       <Typography
         variant="h4"
         sx={{
           fontSize: '24px',
-          color: 'green',
+          color: theme.palette.secondary.main,
           textAlign: 'center',
         }}
       >

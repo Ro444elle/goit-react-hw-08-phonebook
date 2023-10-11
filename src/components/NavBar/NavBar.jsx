@@ -8,11 +8,16 @@ import { Toolbar } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Button } from '@mui/material';
+
+import img8 from '../../assets/images/image8.jpg';
 
 export default function NavBar() {
   const { isLoggedIn } = useAuth();
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -50,9 +55,37 @@ export default function NavBar() {
       </AppBar>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <Typography variant="h4" align="center">
-          Welcome to your Contact Manager
-        </Typography>
+        {isLoggedIn ? (
+          <Typography variant="h4" align="center" sx={{ marginTop: '50px' }}>
+            Welcome to your Home Page
+          </Typography>
+        ) : (
+          <>
+            <Typography
+              variant="h5"
+              align="center"
+              sx={{ marginLeft: '250px' }}
+            >
+              Welcome to your Contact Manager
+            </Typography>
+            {isHomePage && (
+              <Box
+                sx={{
+                  align: 'center',
+                  marginLeft: '100px',
+                  width: 'auto',
+                  marginTop: '50px',
+                  backgroundColor: 'white',
+                  padding: '20px',
+                  boxShadow:
+                    'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
+                }}
+              >
+                <img src={img8} alt="phone" sx={{ width: '400px' }} />
+              </Box>
+            )}
+          </>
+        )}
       </Box>
     </Box>
   );

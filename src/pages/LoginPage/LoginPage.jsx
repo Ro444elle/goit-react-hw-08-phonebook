@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operationsAuth';
 import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
+import img2 from '../../assets/images/image2.jpg';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -37,8 +38,8 @@ export default function LoginPage() {
       sx={{
         margin: 'auto',
         marginBottom: '80px',
-        width: '100%',
-        maxWidth: '300px',
+        width: 'auto',
+        // maxWidth: '300px',
         backgroundColor: 'white',
         padding: '20px',
         boxShadow:
@@ -48,6 +49,7 @@ export default function LoginPage() {
         gap: '20px',
       }}
     >
+      <img src={img2} alt="pinkPhone" />
       <Typography
         variant="h4"
         sx={{
