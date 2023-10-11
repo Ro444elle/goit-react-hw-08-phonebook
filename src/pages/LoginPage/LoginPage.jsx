@@ -52,7 +52,7 @@ export default function LoginPage() {
         variant="h4"
         sx={{
           fontSize: '24px',
-          color: 'blue',
+          color: 'primary.dark',
           textAlign: 'center',
         }}
       >

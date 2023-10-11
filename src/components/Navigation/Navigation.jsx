@@ -12,7 +12,13 @@ export const Navigation = () => {
           Home
         </Button>
       </NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      {isLoggedIn && (
+        <NavLink to="/contacts">
+          <Button variant="outlined" sx={{ color: 'black' }}>
+            Contacts
+          </Button>
+        </NavLink>
+      )}
     </nav>
   );
 };

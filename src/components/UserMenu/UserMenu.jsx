@@ -7,13 +7,19 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
+  const username = user.email.split('@')[0];
+  const isNumberStart = /^\d/.test(username);
+
+  const capitalizedUsername = isNumberStart
+    ? username
+    : username.charAt(0).toUpperCase() + username.slice(1);
+
   return (
     <div>
-      <span>Welcome, {user.name} </span>
+      <span>Welcome, {capitalizedUsername} </span>
       <Button
-        variant="contained"
-        color="secondary"
-        type="button"
+        variant="outlined"
+        sx={{ color: '#000' }}
         onClick={() => dispatch(logOut())}
       >
         Logout

@@ -7,6 +7,8 @@ import Filter from 'components/ContactList/Filter/Filter';
 import { selectIsLoading } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import { selectContact } from 'redux/selectors';
+import { Paper } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 export default function ContactPage() {
   const dispatch = useDispatch();
@@ -19,15 +21,25 @@ export default function ContactPage() {
 
   return (
     <>
-      <title>Phonebook</title>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading ? (
-        <p>Loading Contacts</p>
-      ) : (
-        <ContactList contacts={contacts} />
-      )}
+      <Paper elevation={24}>
+        <ContactForm />
+        <Typography
+          variant="h3"
+          component="h3"
+          sx={{
+            marginLeft: '20px',
+            marginTop: '10px',
+          }}
+        >
+          Contacts all
+        </Typography>
+        <Filter />
+        {isLoading ? (
+          <p>Loading Contacts</p>
+        ) : (
+          <ContactList contacts={contacts} />
+        )}
+      </Paper>
     </>
   );
 }

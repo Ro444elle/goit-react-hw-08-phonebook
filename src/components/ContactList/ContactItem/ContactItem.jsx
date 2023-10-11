@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 export default function ContactItem({ contact }) {
   return (
     <div>
-      {contact.name} - {contact.number}
+      {contact.name}
+      {contact.phoneNumber}
     </div>
   );
 }

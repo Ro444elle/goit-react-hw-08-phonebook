@@ -4,6 +4,7 @@ import { contactApi } from 'api/api';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 import { auth } from './firebase';
 
@@ -26,7 +27,7 @@ export const register = createAsyncThunk(
         user.password
       );
       console.log(response.user);
-      // setAuthHeader(res.data.token);
+
       return response.user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -50,7 +51,7 @@ export const logIn = createAsyncThunk('user/logIn', async (user, thunkAPI) => {
 
 export const logOut = createAsyncThunk('user/logout', async (_, thunkAPI) => {
   try {
-    await contactApi.post('/users/logout');
+    await signOut(auth);
     // clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

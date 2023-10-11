@@ -40,11 +40,10 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
- 
     //  <Suspense fallback={<p>Loading contacts...</p>}>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<LazyHomePage />} />
+        <Route element={<LazyHomePage />} />
         <Route
           path="/register"
           element={
