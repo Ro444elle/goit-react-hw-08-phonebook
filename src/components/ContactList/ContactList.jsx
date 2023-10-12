@@ -52,7 +52,7 @@ export default function ContactList({ contacts }) {
                 onClick={() => dispatch(deleteContact(contact.id))}
                 variant="outlined"
                 size="small"
-                sx={{ color: theme.palette.secondary.dark }}
+                sx={{ color: theme.palette.secondary.light }}
               >
                 <DeleteIcon />
               </IconButton>

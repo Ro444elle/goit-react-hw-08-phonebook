@@ -21,11 +21,20 @@ export default function ContactPage() {
 
   return (
     <>
+      <Typography
+        variant="h3"
+        component="h3"
+        align="center"
+        sx={{ marginTop: '10px', marginBottom: '20px' }}
+      >
+        Welcome to your Home Page
+      </Typography>
       <Paper elevation={24}>
         <ContactForm />
+
         <Typography
-          variant="h3"
-          component="h3"
+          variant="h4"
+          component="h4"
           sx={{
             marginLeft: '20px',
             marginTop: '10px',
