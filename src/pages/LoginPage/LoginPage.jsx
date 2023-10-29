@@ -36,7 +36,6 @@ export default function LoginPage() {
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        align: 'center',
         margin: 'auto',
         marginBottom: '80px',
         width: 'auto',

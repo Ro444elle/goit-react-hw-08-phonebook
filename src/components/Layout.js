@@ -5,7 +5,13 @@ import { Suspense } from 'react';
 
 export default function Layout() {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <NavBar />
       <Suspense fallback={null}>
         <Outlet />

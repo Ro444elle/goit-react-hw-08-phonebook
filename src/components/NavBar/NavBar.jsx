@@ -1,15 +1,15 @@
 import React from 'react';
 import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
-// import AuthNav from '../AuthNav/AuthNav';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { AppBar } from '@mui/material';
 import { Toolbar } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
-import { NavLink, useLocation } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 import img8 from '../../assets/images/image8.jpg';
 import img10 from '../../assets/images/image10.jpg';
@@ -19,20 +19,25 @@ export default function NavBar() {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
+  const theme = useTheme();
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height: '90px' }}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{
+              flexGrow: 1,
+              // [theme.breakpoints.down('sm')]:
+              // display: { xs: 'none', sm: 'block' }
+            }}
           >
             ContactBook
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box>
             <Navigation />
             {isLoggedIn ? (
               <UserMenu />
@@ -57,9 +62,11 @@ export default function NavBar() {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         {isLoggedIn ? (
-          <Typography variant="h4" align="center" sx={{ marginTop: '50px' }}>
-            {/* Welcome to your Home Page */}
-          </Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            sx={{ marginTop: '50px' }}
+          ></Typography>
         ) : (
           <Box
             sx={{
@@ -67,20 +74,24 @@ export default function NavBar() {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              alignSelf: 'center',
-              padding: '50px',
+              margin: '5px',
+              height: 'auto',
             }}
           >
             {isHomePage && !isLoggedIn && (
               <>
-                <Typography variant="h5" sx={{ align: 'center' }}>
+                <Typography
+                  variant="h5"
+                  sx={{ align: 'center', fontSize: '18px' }}
+                >
                   Welcome to your Contact Manager
                 </Typography>
 
                 <Box
                   sx={{
                     align: 'center',
-                    width: 'auto',
+                    width: '100%',
+                    // minWidth: '200px',
                     marginTop: '50px',
                     backgroundColor: 'white',
                     padding: '20px',
@@ -88,7 +99,12 @@ export default function NavBar() {
                       'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
                   }}
                 >
-                  <img src={img8} alt="phone" sx={{ width: '400px' }} />
+                  <img
+                    src={img8}
+                    alt="phone"
+                    width={'100%'}
+                    // minWidth={'200px'}
+                  />
                 </Box>
               </>
             )}
