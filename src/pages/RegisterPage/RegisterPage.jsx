@@ -40,7 +40,7 @@ export default function RegisterPage() {
         margin: 'auto',
         marginBottom: '80px',
         width: '100%',
-        maxWidth: '300px',
+        maxWidth: '350px',
         backgroundColor: 'white',
         padding: '20px',
         boxShadow:

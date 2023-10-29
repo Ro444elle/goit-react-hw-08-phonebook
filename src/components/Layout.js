@@ -10,6 +10,7 @@ export default function Layout() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: '85px',
       }}
     >
       <NavBar />

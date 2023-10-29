@@ -59,7 +59,7 @@ export default function NavBar() {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 3, padding: '0px', margin: '-20px' }}>
         <Toolbar />
         {isLoggedIn ? (
           <Typography

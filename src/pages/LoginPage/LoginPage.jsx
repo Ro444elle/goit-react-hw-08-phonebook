@@ -39,7 +39,7 @@ export default function LoginPage() {
         margin: 'auto',
         marginBottom: '80px',
         width: 'auto',
-        maxWidth: '300px',
+        maxWidth: '350px',
         backgroundColor: 'white',
         padding: '20px',
         boxShadow:
