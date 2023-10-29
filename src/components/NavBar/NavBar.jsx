@@ -9,7 +9,6 @@ import { CssBaseline } from '@mui/material';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Button } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 
 import img8 from '../../assets/images/image8.jpg';
 import img10 from '../../assets/images/image10.jpg';
@@ -19,7 +18,6 @@ export default function NavBar() {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
-  const theme = useTheme();
 
   return (
     <Box sx={{ display: 'flex', height: '90px' }}>
