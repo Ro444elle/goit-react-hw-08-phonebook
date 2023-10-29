@@ -95,7 +95,7 @@ export default function NavBar() {
                     padding: '20px',
                     boxShadow:
                       'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
-                    marginLeft: '11px',
+                    marginLeft: '0px',
                   }}
                 >
                   <img
@@ -118,10 +118,14 @@ export default function NavBar() {
               justifyContent: 'center',
               alignItems: 'center',
               alignSelf: 'center',
-              padding: '50px',
+              padding: '20px',
             }}
           >
-            <Typography variant="h4" align="center" sx={{ marginTop: '50px' }}>
+            <Typography
+              variant="h4"
+              align="center"
+              sx={{ marginTop: '50px', fontSize: '25px' }}
+            >
               Welcome Home
             </Typography>
             <Box
@@ -136,7 +140,7 @@ export default function NavBar() {
                   'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
               }}
             >
-              <img src={img10} alt="phone" width={'600px'} />
+              <img src={img10} alt="phone" width={'100%'} />
             </Box>
           </Box>
         )}

@@ -25,7 +25,7 @@ export default function ContactPage() {
         variant="h4"
         component="h4"
         align="center"
-        sx={{ marginTop: '10px', marginBottom: '20px' }}
+        sx={{ marginTop: '-800px', marginBottom: '20px', fontSize: '18px' }}
       >
         Welcome to your Home Page
       </Typography>
@@ -38,9 +38,10 @@ export default function ContactPage() {
           sx={{
             marginLeft: '20px',
             marginTop: '10px',
+            fontSize: '20px',
           }}
         >
-          Contacts all
+          ALL CONTACTS
         </Typography>
         <Filter />
         {isLoading ? (
