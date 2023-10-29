@@ -22,8 +22,8 @@ export default function ContactPage() {
   return (
     <>
       <Typography
-        variant="h3"
-        component="h3"
+        variant="h4"
+        component="h4"
         align="center"
         sx={{ marginTop: '10px', marginBottom: '20px' }}
       >
